@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="260" height="19" tilewidth="16" tileheight="16" nextobjectid="229">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="260" height="19" tilewidth="16" tileheight="16" nextobjectid="238">
  <tileset firstgid="1" name="tileset_gutter" tilewidth="16" tileheight="16" spacing="2" margin="1" tilecount="924" columns="33">
   <image source="tileset_gutter.png" width="594" height="504"/>
  </tileset>
@@ -10,7 +10,7 @@
  </layer>
  <layer name="Graphic Layer" width="260" height="19">
   <data encoding="base64" compression="zlib">
-   eJztmclOwzAQht3lApRKhVOvkbgAbdmR+hrAldcATrwHUHgPlndjKmJhGdvxMnGC8n/SL6LG63jmT0qFAAAAAABoD099IZ5JL/12zinbyvZLYZeNKcOa66CJ2INuoteRjQ+690n6ypiTIXPKtrJ9jB9ww1XHTcQedBO9jmJp2zPsvW9XLlDHoKtw5P6qFAAAhLIi73klvTE8fznHAgAA8D+Z9ppeQbdZUPyPSh07zkI+s1Xh+Q24WcIPvPD5/Y3zN7oNOpdNprMZip+1DZXrVPoVsrVNmTu0r2098t60VBdstShVBfwgDwuPdwCVfWp3gLMBDBQCfvDfgR8ADgrB5wcjRSAv8AOQiu4FqX4wVtRV1O+96l8d9b4L9bu8Op465vozLj9Y58BehXzyRAj3/n3R+173fj+3xbXq2jV+1Vpc7QvLdRV67YX0leh5F4rJC1L8YGZQDJz/F6uLnRrWl7pvDj/wzQHfdtxc0f5OSDcZ8iP0PEw1HRLLmL5c2LwgxQ/GBsXQ9vfeCa3tlLTLvMbUfaf2V3PgduBWSL5wIb1gHfuzDJ4QEk9XTbtiZKu9nPF1eQGHH8xFnB9s0bgj0naL/WCi5WSMJ5xTnwvSpda3Lj+Q85nmlOg58DhwKyRn7mjOe9JDwt50LzB5Asc8Kr7n4VPTphi5ai+0JmOp8gLf9xsT0gMWIs4PDin2M9K8Jj/oQa0UzuhvLJpeBwQ1JZWm19K0EId8+gZGkWAA
+   eJztmUtOwzAQht3HBiiVCqtuK7EB2vJG6jWALdcAVpwCkIDCLQDxuBtTUYuRSRw7HjtB/T/pF1Fje5yZ4U+aKgUAAAAAUB/um0o9kB6b9Yypx+rxE5WvPPoCe45BzNzf0Jq3pLuIdXWNYdYQpMe1Bh907pP0lbBOPjH1WD2+jB9II/V/HDP3L7TmK+ktYl1dY5g1BOmRqkEVzw823pv5SkUVHgpAHZDo/elcAADgy5S854n0LHD/lVxrUUjx7gEA8D9I8e4hBf1G1TtYbMaU/525di210PdsLty/gTQT+IETLr+/Sf5Gt0R1WRaqTVv97K3NjkPhPmbK9LUmU0hs37k8bta5/lyLYKuDuYqAH6Rh7PAMwNmkcVuoDRBgoOAH/x34AZBgoOT8oMME0gI/AKGYXhDqB12mRYV/7+V/Tfh5G/y7PF+Przn7TMoPZj2wUSCXPlHKfv2umHNPG7+f5+W16Ni2ftFebOMHOccuhMydYfadL1leEOIHwwyVQfK9WCzWIuwv9Lol/MC1B1zHSXNC17dHOkvQH771MHPik6OQuRLkeUGIH3QzVIa6P/f2aG/7pHXhPYZed+h83gPnLbt8+kUK7QWz3B8k8ASffGblwzVHIXMlsHmBhB+MVDk/WKF1O6TVGvtBz+jJMp5wSHOOSMfG3Fh+oONlxdSYPXDdssunZy4o5iXpKuDaTC/I8gSJOBzXeuTlwiVHIXMlKPIC12fFLLQHjFU5P9im3A9Jo0h+0IBqKdToby6q3gcEVSVO1XupWshDOn0Do1xyNQ==
   </data>
  </layer>
  <objectgroup name="Ground &amp; Top">
@@ -24,10 +24,6 @@
   <object id="31" x="2512" y="224" width="16" height="48"/>
   <object id="32" x="2528" y="240" width="16" height="32"/>
   <object id="33" x="2544" y="256" width="16" height="16"/>
-  <object id="34" x="2624" y="256" width="16" height="16"/>
-  <object id="35" x="2640" y="240" width="16" height="32"/>
-  <object id="36" x="2656" y="224" width="16" height="48"/>
-  <object id="37" x="2672" y="208" width="32" height="64"/>
   <object id="38" x="2736" y="208" width="16" height="64"/>
   <object id="39" x="2752" y="224" width="16" height="48"/>
   <object id="40" x="2768" y="240" width="16" height="32"/>
@@ -42,7 +38,7 @@
   <object id="52" x="3168" y="240" width="16" height="32"/>
   <object id="53" x="3152" y="256" width="16" height="16"/>
   <object id="54" x="3424" y="256" width="16" height="16"/>
-  <object id="165" x="240" y="46" width="16" height="226"/>
+  <object id="165" x="240" y="17.3333" width="16" height="254.667"/>
   <object id="168" x="704" y="160" width="48" height="16"/>
   <object id="169" x="800" y="128" width="64" height="16"/>
   <object id="170" x="736" y="208" width="16" height="16"/>
@@ -62,10 +58,19 @@
   <object id="187" x="1232" y="144" width="32" height="16"/>
   <object id="206" x="3840" y="17" width="16" height="255"/>
   <object id="207" x="2736" y="272" width="1392" height="16"/>
-  <object id="219" x="32" y="1" width="3824" height="16"/>
+  <object id="219" x="238.667" y="1" width="3617.33" height="16"/>
   <object id="222" x="1088" y="96" width="48" height="16"/>
   <object id="223" x="1200" y="64" width="112" height="16"/>
   <object id="224" x="1392" y="96" width="48" height="16"/>
+  <object id="229" x="1536" y="144" width="128" height="16"/>
+  <object id="230" x="2704" y="208" height="64"/>
+  <object id="231" x="2688" y="208" width="16" height="64"/>
+  <object id="232" x="2672" y="224" width="16" height="48"/>
+  <object id="233" x="2656" y="240" width="16" height="32"/>
+  <object id="234" x="2640" y="256" width="16" height="16"/>
+  <object id="235" x="3296" y="160" width="32" height="16"/>
+  <object id="236" x="3328" y="192" width="32" height="16"/>
+  <object id="237" x="3360" y="224" width="32" height="16"/>
  </objectgroup>
  <objectgroup name="Weltgrenze unten">
   <object id="220" x="240" y="289" width="3616" height="16"/>
@@ -132,14 +137,6 @@
   <object id="101" x="1712" y="144" width="16" height="16"/>
   <object id="102" x="1760" y="208" width="16" height="16"/>
   <object id="103" x="1648" y="144" width="16"/>
-  <object id="104" x="1648" y="144" width="16" height="16"/>
-  <object id="105" x="1632" y="144" width="16" height="16"/>
-  <object id="106" x="1616" y="144" width="16" height="16"/>
-  <object id="107" x="1600" y="144" width="16" height="16"/>
-  <object id="108" x="1584" y="144" width="16" height="16"/>
-  <object id="109" x="1568" y="144" width="16" height="16"/>
-  <object id="110" x="1552" y="144" width="16" height="16"/>
-  <object id="111" x="1536" y="144" width="16" height="16"/>
   <object id="112" x="1520" y="208" width="16" height="16"/>
   <object id="113" x="1488" y="208" width="16" height="16"/>
   <object id="115" x="592" y="208" width="16" height="16"/>

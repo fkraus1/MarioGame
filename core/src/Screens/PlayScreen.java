@@ -21,6 +21,7 @@ import Scenes.Hud;
 import Sprites.Enemies.Enemy;
 import Sprites.Mario;
 import Tools.B2WorldCreator;
+import Tools.InputHandler;
 import Tools.WorldContactListener;
 
 
@@ -50,6 +51,7 @@ public class PlayScreen implements Screen {
     private Mario player;
 
     private Music music;
+    InputHandler inputHandler;
 
     public PlayScreen(MarioGame game) {
         atlas = new TextureAtlas("Mario_and_Enemies.pack");
@@ -93,6 +95,8 @@ public class PlayScreen implements Screen {
     public void update(float dt) {
         //Zuerst User-Input verarbeiten
         handleInput(dt);
+        //Touch INput
+        handleTouchInput(dt);
 
         world.step(1 / 60f, 6, 2);
 
@@ -113,6 +117,7 @@ public class PlayScreen implements Screen {
     }
 
     private void handleInput(float dt) {
+        //inputHandler
         if(Gdx.input.isKeyJustPressed(Input.Keys.SPACE)&& player.b2body.getLinearVelocity().y ==0)//ab && experimentell
             player.b2body.applyLinearImpulse(new Vector2(0, 4f), player.b2body.getWorldCenter(), true);
         if(Gdx.input.isKeyPressed(Input.Keys.RIGHT) && player.b2body.getLinearVelocity().x <=2 )
@@ -120,6 +125,18 @@ public class PlayScreen implements Screen {
         if(Gdx.input.isKeyPressed(Input.Keys.LEFT) && player.b2body.getLinearVelocity().x >=-2 )
             player.b2body.applyLinearImpulse(new Vector2(-0.1f, 0), player.b2body.getWorldCenter(), true);
         if(Gdx.input.isKeyPressed(Input.Keys.DOWN))
+            player.b2body.applyLinearImpulse(new Vector2(0, -0.5f), player.b2body.getWorldCenter(), true);
+
+    }
+
+    private void handleTouchInput(float dt) {
+        if(game.controller.isUpPressed() && player.b2body.getLinearVelocity().y ==0)//ab && experimentell
+            player.b2body.applyLinearImpulse(new Vector2(0, 4f), player.b2body.getWorldCenter(), true);
+        if(game.controller.isRightPressed() && player.b2body.getLinearVelocity().x <=2 )
+            player.b2body.applyLinearImpulse(new Vector2(0.1f, 0), player.b2body.getWorldCenter(), true);
+        if(game.controller.isLeftPressed() && player.b2body.getLinearVelocity().x >=-2 )
+            player.b2body.applyLinearImpulse(new Vector2(-0.1f, 0), player.b2body.getWorldCenter(), true);
+        if(game.controller.isDownPressed())
             player.b2body.applyLinearImpulse(new Vector2(0, -0.5f), player.b2body.getWorldCenter(), true);
 
     }
@@ -146,11 +163,13 @@ public class PlayScreen implements Screen {
 
         game.batch.setProjectionMatrix(hud.stage.getCamera().combined);
         hud.stage.draw();
+        game.controller.draw();
     }
 
     @Override
     public void resize(int width, int height) {
         gameport.update(width, height);
+        game.controller.resize(width, height);
     }
 
     public TiledMap getMap(){

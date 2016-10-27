@@ -7,11 +7,12 @@ import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import Screens.PlayScreen;
+import Tools.Controller;
 
 public class MarioGame extends Game {
 	public static final int V_WIDTH = 480;
 	public static final int V_HEIGHT =288;
-	public SpriteBatch batch;
+	public static SpriteBatch batch;//static ist experimentell
 	public static final float PPM = 100;
 
 	public static final short GROUND2_BIT = 128;
@@ -24,6 +25,8 @@ public class MarioGame extends Game {
 	public static final short ENEMY_BIT = 64;
 	public static final short ZIEL_BIT = 256;
 	public static final short ENEMY_HEAD_BIT = 512;
+
+	public Controller controller;
 
 
 	/**
@@ -42,6 +45,7 @@ public class MarioGame extends Game {
 		manager.load("audio/sounds/breakblock.wav", Sound.class);
 		manager.finishLoading();//Brent Aureli Part 15 noch man anschauen, um AssetManager umzustellen
 
+		controller = new Controller();
 		setScreen(new PlayScreen(this));
 	}
 

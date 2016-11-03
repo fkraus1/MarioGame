@@ -4,3 +4,4 @@
 - Score sauber setzen
 - Stampfen(Nur als groﬂer Mario?)
 - Sound beim Springen gegen Boden(Platformen, Kollision mit head)
+- Warppipes

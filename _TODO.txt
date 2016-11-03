@@ -1,7 +1,10 @@
-- Box2d Rectangle nach zersörung von Brick entfernen(stürzt manchmal ab)
+- Box2d Rectangle nach zersÃ¶rung von Brick entfernen(stÃ¼rzt manchmal ab)
 - Levelauswahl
 - mehrere Leben, respawn
 - Score sauber setzen
-- Stampfen(Nur als großer Mario?)
+- Stampfen(Nur als grosser Mario?)
 - Sound beim Springen gegen Boden(Platformen, Kollision mit head)
 - Warppipes
+- Debuglinien loswerden
+- Steuerung verbessern
+- Sterben

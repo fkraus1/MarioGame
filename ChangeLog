@@ -1,0 +1,18 @@
+# ChangeLog
+
+Changes (30.11.2016):
+ - Successfully added a new Startmenu (with a part of a anime-cat, as I do not have the resources from Richard)
+ - A Button for starting the game. After clicking on it, the "main" game will be started.
+ - Pressing "ESC" during the game would exit to the menu.
+
+Problems/Bugs/To be solved (30.11.2016):
+ - The background music does not end automatically as the player exit to the start menu.
+   A class for stopping the music is created under PlayScreen.java, but is not used. (@Felix)
+ - A button for ESC is not shown in the game. Although pressing ESC on a keyboard would do the job, we should not forget that a button is
+   the only way to exit the game on a smartphone.
+
+Others:
+ - A button for options and another screen for choosing the levels are to be developed. These should not be so hard, however, it is to be
+   thought what we should do with the options. Maybe we could just leave it...
+ - The reason why the game crashes at some points is, the block is not really destroyed. I will try to upload a picture so that you could
+   see, that Mario could stand on this kind of "destroyed" blocks, which does not happens above a really destroyed block.

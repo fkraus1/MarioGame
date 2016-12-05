@@ -6,7 +6,7 @@ import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-import Screens.PlayScreen;
+import Screens.*;
 import Tools.Controller;
 
 public class MarioGame extends Game {
@@ -45,8 +45,8 @@ public class MarioGame extends Game {
 		manager.load("audio/sounds/breakblock.wav", Sound.class);
 		manager.finishLoading();//Brent Aureli Part 15 noch man anschauen, um AssetManager umzustellen
 
-		controller = new Controller();
-		setScreen(new PlayScreen(this));
+		controller = new Controller(this);
+		setScreen(new MenuScreen(this));
 	}
 
 	@Override

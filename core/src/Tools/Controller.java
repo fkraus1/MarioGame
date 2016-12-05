@@ -12,16 +12,22 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.gdx.game.MarioGame;
 
+import com.badlogic.gdx.Game;
+import Screens.MenuScreen;
+
 /**
  * Created by sknof
+ * Edited by Zhang on 30.11.2016
  */
 public class Controller {
     Viewport viewport;
     Stage stage;
-    boolean upPressed, downPressed, leftPressed, rightPressed;
+    boolean upPressed, downPressed, leftPressed, rightPressed, escPressed;
     OrthographicCamera cam;
+    MarioGame game;
 
-    public Controller(){
+    public Controller(MarioGame game){
+        this.game = game;
         cam = new OrthographicCamera();
         viewport = new FitViewport(800, 480, cam);
         stage = new Stage(viewport, MarioGame.batch);
@@ -43,6 +49,9 @@ public class Controller {
                     case Input.Keys.RIGHT:
                         rightPressed = true;
                         break;
+                    case Input.Keys.ESCAPE:
+                        escPressed = true;
+                        break;
                 }
                 return true;
             }
@@ -61,6 +70,11 @@ public class Controller {
                         break;
                     case Input.Keys.RIGHT:
                         rightPressed = false;
+                        break;
+                    case Input.Keys.ESCAPE:
+                        escPressed = false;
+                        backToMenu();
+                        //Music should stop if back to menu...
                         break;
                 }
                 return true;
@@ -136,6 +150,19 @@ public class Controller {
             }
         });
 
+        Image esc = new Image(new Texture("esc.png"));
+        esc.setSize(75,75);
+        esc.addListener(new InputListener() {
+            public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
+                escPressed = true;
+                return true;
+            }
+
+            public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+                escPressed = false;
+            }
+        });
+
         Image spacerImg = new Image(new Texture("spacer.png"));
         spacerImg.setSize(50, 50);
 
@@ -163,6 +190,11 @@ public class Controller {
         stage.addActor(table);
     }
 
+    private void backToMenu() {
+        // switch to the screen of menu
+        game.setScreen(new MenuScreen(game));
+    }
+
     public void draw(){
         stage.draw();
     }
@@ -182,6 +214,8 @@ public class Controller {
     public boolean isRightPressed() {
         return rightPressed;
     }
+
+    public boolean isEscPressed() { return escPressed; }
 
     public void resize(int width, int height){
         viewport.update(width, height);

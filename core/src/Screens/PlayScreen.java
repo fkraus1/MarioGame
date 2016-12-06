@@ -83,6 +83,14 @@ public class PlayScreen implements Screen {
 
     }
 
+    /*
+     * A public class to stop the background music.
+     * Created by Zhang
+     */
+    public void stopBackgroundMusic(){
+        music.stop();
+    }
+
     public TextureAtlas getAtlas(){
         return atlas;
     }
@@ -118,7 +126,8 @@ public class PlayScreen implements Screen {
 
     private void handleInput(float dt) {
         //inputHandler
-        if(Gdx.input.isKeyJustPressed(Input.Keys.SPACE)&& player.b2body.getLinearVelocity().y ==0)//ab && experimentell
+        if(Gdx.input.isKeyJustPressed(Input.Keys.SPACE) || Gdx.input.isKeyJustPressed(Input.Keys.UP)
+                && player.b2body.getLinearVelocity().y ==0)//ab && experimentell
             player.b2body.applyLinearImpulse(new Vector2(0, 4f), player.b2body.getWorldCenter(), true);
         if(Gdx.input.isKeyPressed(Input.Keys.RIGHT) && player.b2body.getLinearVelocity().x <=2 )
             player.b2body.applyLinearImpulse(new Vector2(0.1f, 0), player.b2body.getWorldCenter(), true);
@@ -126,6 +135,8 @@ public class PlayScreen implements Screen {
             player.b2body.applyLinearImpulse(new Vector2(-0.1f, 0), player.b2body.getWorldCenter(), true);
         if(Gdx.input.isKeyPressed(Input.Keys.DOWN))
             player.b2body.applyLinearImpulse(new Vector2(0, -0.5f), player.b2body.getWorldCenter(), true);
+        if(Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE))
+            game.setScreen(new MenuScreen(game));
 
     }
 

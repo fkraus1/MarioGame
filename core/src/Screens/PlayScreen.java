@@ -40,6 +40,7 @@ public class PlayScreen implements Screen {
     //Tiled map Variablen
     private TmxMapLoader mapLoader;
     private TiledMap map;
+    private String tmx;
     private OrthogonalTiledMapRenderer renderer;
 
     //Box2d Variablen
@@ -53,7 +54,8 @@ public class PlayScreen implements Screen {
     private Music music;
     InputHandler inputHandler;
 
-    public PlayScreen(MarioGame game) {
+    public PlayScreen(MarioGame game, String tmx) {
+        this.tmx = tmx;
         atlas = new TextureAtlas("Mario_and_Enemies.pack");
 
         this.game = game;
@@ -63,7 +65,12 @@ public class PlayScreen implements Screen {
 
         mapLoader = new TmxMapLoader();
         //Hier wird die Map geladen(Verändern, um mehrere Level zu erlauben)
-        map = mapLoader.load("level1.tmx");
+        //Safety code needed when tmx file doesn't exist
+        try {
+            map = mapLoader.load(tmx);
+        } catch (Exception e) {
+            return;
+        }
         renderer = new OrthogonalTiledMapRenderer(map, 1/MarioGame.PPM);
         gamecam.position.set(gameport.getWorldWidth()/2, (gameport.getWorldHeight()/2)-0.15f, 0);
 
@@ -135,9 +142,10 @@ public class PlayScreen implements Screen {
             player.b2body.applyLinearImpulse(new Vector2(-0.1f, 0), player.b2body.getWorldCenter(), true);
         if(Gdx.input.isKeyPressed(Input.Keys.DOWN))
             player.b2body.applyLinearImpulse(new Vector2(0, -0.5f), player.b2body.getWorldCenter(), true);
-        if(Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE))
+        if(Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) {
+            stopBackgroundMusic();
             game.setScreen(new MenuScreen(game));
-
+        }
     }
 
     private void handleTouchInput(float dt) {

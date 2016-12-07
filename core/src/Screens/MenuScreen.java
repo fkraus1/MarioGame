@@ -25,6 +25,7 @@ public class MenuScreen extends AbstractScreen implements Screen{
     private Texture downTexture;
     private Button startBtn;
     private Button optionBtn;
+    private Button quitBtn;
 
     public MenuScreen(MarioGame game) {
         super(game);
@@ -32,7 +33,7 @@ public class MenuScreen extends AbstractScreen implements Screen{
 
         stage = new Stage();
         Gdx.input.setInputProcessor(stage);
-        initStartBtn();
+        initBtn();
         //if(Gdx.input.isTouched()) onStartClicked();
     }
 
@@ -59,15 +60,19 @@ public class MenuScreen extends AbstractScreen implements Screen{
     @Override public void hide() {}
     public void pause() {}
 
-    private void initStartBtn() {
-        upTexture = new Texture(Gdx.files.internal("up.png"));
-        downTexture = new Texture(Gdx.files.internal("down.png"));
+    private void initBtn() {
+        upTexture = new Texture(Gdx.files.internal("transp.png"));
+        downTexture = new Texture(Gdx.files.internal("transp.png"));
         Button.ButtonStyle style = new Button.ButtonStyle();
         style.up = new TextureRegionDrawable(new TextureRegion(upTexture));
         style.down = new TextureRegionDrawable(new TextureRegion(downTexture));
         startBtn = new Button(style);
+        optionBtn = new Button(style);
+        quitBtn = new Button(style);
 
-        startBtn.setPosition(10, 50);
+        startBtn.setPosition(70, 85);
+        quitBtn.setPosition(280, 85);
+        optionBtn.setPosition(485, 85);
 
         startBtn.addListener(new ClickListener() {
             @Override
@@ -77,6 +82,8 @@ public class MenuScreen extends AbstractScreen implements Screen{
         });
 
         stage.addActor(startBtn);
+        stage.addActor(quitBtn);
+        stage.addActor(optionBtn);
     }
 
     private void onStartClicked() {
@@ -86,4 +93,6 @@ public class MenuScreen extends AbstractScreen implements Screen{
     private void onOptionsClicked() {
         //Do nothing...
     }
+
+    private void onQuitClicked() { }
 }

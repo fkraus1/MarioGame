@@ -1,0 +1,16 @@
+# ChangeLog
+
+Changes:
+ - Switched the background picture of the start menu into the picture from Richard, although the background picture of the leveling
+   was not to be found.
+ - Changed the texture of the buttons of the start menu into a transparent picture. Now clicking on the middle of the left button in
+   the picture (start) would switch to the leveling.
+ - A basic idea of leveling was created. The only job left is to replace the 3-year-old-niveau pictures with the real textures.
+ - Exiting to the start menu during a game will now stop the background music.
+
+Problems/Bugs/To be solved:
+ - Still, a button for quitting the game is not created. Nothing else.
+
+Others:
+ - Should there be nothing else to be done, I will start with my portfolio. I will appreciate that if some of you send me the complete
+   BUS-Veranstaltung...
